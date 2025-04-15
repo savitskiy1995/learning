@@ -10,4 +10,4 @@ def print_percents(x, y):
     print(str(y) + " is " + str(percents(x, y) + " % of " + str(x)))
 
 
-x = nothing_for_test
+x = nothing_for_test1
