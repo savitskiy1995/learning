@@ -8,3 +8,6 @@ def percents(x, y):
 def print_percents(x, y):
     """"Print what percentage of x is y"""
     print(str(y) + " is " + str(percents(x, y) + " % of " + str(x)))
+
+
+x = nothing_for_test
