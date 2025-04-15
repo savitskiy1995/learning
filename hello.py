@@ -1,0 +1,35 @@
+def hello()
+
+
+print ("Hello , world")
+hello()
+hello()
+hello()
+
+def set_Up(self)
+    self.wd = WebDriver()
+    self.wd.implicity_wait(60)
+ def test_test_add_group(self)
+     success = True
+     wd= self.wd
+     wd.get("https://localhost/adressbook/")
+     wd.find_element_by_name("user").click()
+     wd.find_element_by_name("user").clear()
+     wd.find_element_by_name("user").send_keys("admin")
+     wd.find_element_by_name("pass").click()
+     wd.find_element_by_name("pass").clear()
+     wd.find_element_by_name("user").send_keys("secret")
+     wd.find_element_by_name("user").click()
+     wd.find_element_by_name("user").clear()
+     wd.find_element_by_name("user").send_keys("admin")
+     wd.find_element_by_name("pass").click()
+     wd.find_element_by_name("pass").clear()
+     wd.find_element_by_name("user").send_keys("secret")
+     wd.find_element_by_name("user").click()
+     wd.find_element_by_name("user").clear()
+     wd.find_element_by_name("user").send_keys("admin")
+     wd.find_element_by_name("pass").click()
+     wd.find_element_by_name("pass").clear()
+     wd.find_element_by_name("user").send_keys("secret")
+     self.assertTrue(success)
+ def
