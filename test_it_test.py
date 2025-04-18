@@ -14,25 +14,36 @@ class UntitledTestCase(unittest.TestCase):
 
     def test_untitled_test_case(self):
         wd = self.wd
+        self.open_home_page(wd)
+        self.login(wd)
+        self.open_project_name(wd)
+
+    def open_project_name(self, wd):
+        self.go_to_projects(wd)
+
+    def go_to_projects(self, wd):
+        self.check_project_filter(wd)
+
+
+    def open_home_page(self, wd):
         wd.get("http://msk-srv-elma04/Security/Account/LogOn?ReturnUrl=%2f")
+
+    def login(self, wd):
+        self.logout(wd)
+
+    def logout(self, wd):
         wd.find_element_by_id("password").click()
         wd.close()
         wd.get("http://msk-srv-testit01/auth")
-        wd.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='LOCAL'])[1]/following::button[1]").click()
+        wd.find_element_by_xpath(
+            "(.//*[normalize-space(text()) and normalize-space(.)='LOCAL'])[1]/following::button[1]").click()
         wd.find_element_by_id("username").clear()
         wd.find_element_by_id("username").send_keys("testrole")
         wd.find_element_by_name("null").click()
         wd.find_element_by_name("null").clear()
         wd.find_element_by_name("null").send_keys("Testrole12")
         wd.find_element_by_xpath("//button[@type='submit']").click()
-        wd.get("http://msk-srv-testit01/projects")
-        wd.find_element_by_id("9").click()
-        wd.find_element_by_xpath("//div[@id='cdk-overlay-0']/ui-drawer-container/tms-projects-filters/form/section/ui-key-value-grid/nz-form-item[2]/nz-form-control/div/div/nz-select/nz-select-top-control/nz-select-item").click()
-        wd.find_element_by_xpath("//div[@id='cdk-overlay-1']/nz-option-container/div/cdk-virtual-scroll-viewport/div/nz-option-item[2]/div").click()
-        wd.find_element_by_xpath("//button[@type='submit']").click()
-        wd.find_element_by_xpath("//tms-user-avatar[@id='8']/span").click()
-        wd.find_element_by_xpath("//div[@id='cdk-overlay-3']/div/ul/li[5]/span").click()
-    
+
     def is_element_present(self, how, what):
         try: self.wd.find_element(by=how, value=what)
         except NoSuchElementException as e: return False
