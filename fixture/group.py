@@ -1,6 +1,6 @@
-class GroupHelper
+class GroupHelper:
     def __init__(self, app):
-        self.app=app
+        self.app = app
 
 
     def test_add_group(self):
@@ -8,7 +8,7 @@ class GroupHelper
         self.app.open_home_page(wd)
         self.app.create(wd)
 
-    def open_groups_page(selfself):
+    def open_groups_page(self):
         wd = self.wd
         wd.find_element_by_link_text("groups").click()
 
@@ -50,18 +50,18 @@ class GroupHelper
         # editing fields
         wd.find_element_by_name("group_name").click()
         wd.find_element_by_name("group_name").clear()
-        wd.find_element_by_name("group_name").send_keys(testname1)
+        wd.find_element_by_name("group_name").send_keys("testname1")
         wd.find_element_by_name("group_header").click()
         wd.find_element_by_name("group_header").clear()
-        wd.find_element_by_name("group_header").send_keys(testheader1)
+        wd.find_element_by_name("group_header").send_keys("testheader1")
         wd.find_element_by_name("group_footer").click()
         wd.find_element_by_name("group_footer").clear()
-        wd.find_element_by_name("group_footer").send_keys(testfooter1)
+        wd.find_element_by_name("group_footer").send_keys("testfooter1")
         # finishing group edit
         wd.find_element_by_name("edit").click()
         self.return_to_groups_page()
 
     def return_to_groups_page(self):
-        wd= self.app.wd
+        wd = self.app.wd
         wd.find_element_by_link_text("group page").click()
 
